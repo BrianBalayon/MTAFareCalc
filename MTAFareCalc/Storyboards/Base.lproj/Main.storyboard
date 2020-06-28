@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,19 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MTA Fare Calculator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YG4-KW-NrQ">
+                                <rect key="frame" x="20" y="194" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iSl-14-JEj">
-                                <rect key="frame" x="20" y="244" width="374" height="598"/>
+                                <rect key="frame" x="20" y="369" width="374" height="293"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwJ-LY-5Gr">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="299"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="146.66666666666666"/>
                                         <state key="normal" title="New Card"/>
                                         <connections>
                                             <segue destination="vpI-d5-Flq" kind="show" id="0Xp-b0-jaL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhO-wB-uDl">
-                                        <rect key="frame" x="0.0" y="299" width="374" height="299"/>
+                                        <rect key="frame" x="0.0" y="146.66666666666663" width="374" height="146.33333333333337"/>
                                         <state key="normal" title="Refill"/>
+                                        <connections>
+                                            <segue destination="YuF-XJ-IWX" kind="show" id="Laq-cs-vdj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -36,8 +45,11 @@
                         <constraints>
                             <constraint firstItem="iSl-14-JEj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Og-4t-EW4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iSl-14-JEj" secondAttribute="trailing" constant="20" id="Bmx-6H-d4H"/>
-                            <constraint firstItem="iSl-14-JEj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="Ikz-U7-qiW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iSl-14-JEj" secondAttribute="bottom" constant="20" id="OYV-KG-4uC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YG4-KW-NrQ" secondAttribute="trailing" constant="20" id="Euq-PX-ogl"/>
+                            <constraint firstItem="iSl-14-JEj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="325" id="Ikz-U7-qiW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iSl-14-JEj" secondAttribute="bottom" constant="200" id="OYV-KG-4uC"/>
+                            <constraint firstItem="YG4-KW-NrQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="e40-Np-ES6"/>
+                            <constraint firstItem="YG4-KW-NrQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ic4-Wn-8F9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -53,14 +65,130 @@
                     <view key="view" contentMode="scaleToFill" id="VEu-XA-Lxx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-5Z-poF">
+                                <rect key="frame" x="20" y="350" width="374" height="208"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4eg-41-xcC">
+                                        <rect key="frame" x="61.333333333333329" y="0.0" width="251.66666666666669" height="40.666666666666664"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Rides Needed" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-JH-1ft">
+                                                <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="40.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rides Needed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-5R-SVh">
+                                                <rect key="frame" x="133.33333333333331" y="0.0" width="118.33333333333331" height="40.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3H-Iq-vXN">
+                                        <rect key="frame" x="155" y="60.6666666666667" width="64" height="147.33333333333337"/>
+                                        <state key="normal" title="Calculate"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy a New MetroCard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhK-ap-fge">
+                                <rect key="frame" x="30" y="124.99999999999999" width="354" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LQO-5Z-poF" firstAttribute="leading" secondItem="awm-Zd-3yR" secondAttribute="leading" constant="20" id="1Kg-FN-gnF"/>
+                            <constraint firstItem="awm-Zd-3yR" firstAttribute="bottom" secondItem="LQO-5Z-poF" secondAttribute="bottom" constant="250" id="GCe-dG-REz"/>
+                            <constraint firstItem="FhK-ap-fge" firstAttribute="top" secondItem="awm-Zd-3yR" secondAttribute="top" constant="125" id="QdG-eI-ZPR"/>
+                            <constraint firstItem="LQO-5Z-poF" firstAttribute="top" secondItem="awm-Zd-3yR" secondAttribute="top" constant="350" id="Ug6-r5-C9j"/>
+                            <constraint firstItem="FhK-ap-fge" firstAttribute="leading" secondItem="awm-Zd-3yR" secondAttribute="leading" constant="30" id="wVh-sX-Zli"/>
+                            <constraint firstItem="awm-Zd-3yR" firstAttribute="trailing" secondItem="FhK-ap-fge" secondAttribute="trailing" constant="30" id="yMz-BT-Dhw"/>
+                            <constraint firstItem="awm-Zd-3yR" firstAttribute="trailing" secondItem="LQO-5Z-poF" secondAttribute="trailing" constant="20" id="zsB-Bm-IKj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="awm-Zd-3yR"/>
                     </view>
                     <navigationItem key="navigationItem" id="EMb-qB-dj5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uk-0l-qpq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="113"/>
+            <point key="canvasLocation" x="1205.7971014492755" y="-342.1875"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1sa-D3-68c">
+            <objects>
+                <viewController id="YuF-XJ-IWX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cin-eK-c0U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F3J-vp-hZu">
+                                <rect key="frame" x="20" y="350" width="374" height="208"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tBu-KY-ymH">
+                                        <rect key="frame" x="61.333333333333329" y="0.0" width="251.66666666666669" height="40.666666666666664"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Rides Needed" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN3-Og-k90">
+                                                <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="40.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rides Needed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSh-rT-kQ6">
+                                                <rect key="frame" x="133.33333333333331" y="0.0" width="118.33333333333331" height="40.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MCa-Bs-7N4">
+                                        <rect key="frame" x="47.666666666666686" y="60.666666666666686" width="279" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Balance" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPs-5f-mIx">
+                                                <rect key="frame" x="0.0" y="0.0" width="132" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Balance" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-08-L7h">
+                                                <rect key="frame" x="147" y="0.0" width="132" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONg-8P-LTG">
+                                        <rect key="frame" x="155" y="114.66666666666669" width="64" height="93.333333333333314"/>
+                                        <state key="normal" title="Calculate"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refill Your Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reo-cI-5IJ">
+                                <rect key="frame" x="30" y="124.99999999999999" width="354" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="reo-cI-5IJ" firstAttribute="leading" secondItem="7ZK-pv-Uhi" secondAttribute="leading" constant="30" id="0U3-b0-qSf"/>
+                            <constraint firstItem="7ZK-pv-Uhi" firstAttribute="bottom" secondItem="F3J-vp-hZu" secondAttribute="bottom" constant="250" id="2HS-xz-9d7"/>
+                            <constraint firstItem="F3J-vp-hZu" firstAttribute="top" secondItem="7ZK-pv-Uhi" secondAttribute="top" constant="350" id="IgD-qU-on3"/>
+                            <constraint firstItem="7ZK-pv-Uhi" firstAttribute="trailing" secondItem="F3J-vp-hZu" secondAttribute="trailing" constant="20" id="KkJ-pg-AAj"/>
+                            <constraint firstItem="reo-cI-5IJ" firstAttribute="top" secondItem="7ZK-pv-Uhi" secondAttribute="top" constant="125" id="ck7-Lf-Kbl"/>
+                            <constraint firstItem="F3J-vp-hZu" firstAttribute="leading" secondItem="7ZK-pv-Uhi" secondAttribute="leading" constant="20" id="jMR-lz-zru"/>
+                            <constraint firstItem="7ZK-pv-Uhi" firstAttribute="trailing" secondItem="reo-cI-5IJ" secondAttribute="trailing" constant="30" id="ldj-L5-3jc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7ZK-pv-Uhi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zko-vN-7eJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSw-Px-evc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206" y="455"/>
         </scene>
     </scenes>
 </document>
