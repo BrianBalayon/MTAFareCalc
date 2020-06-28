@@ -21,6 +21,7 @@ class NewCardViewController: UIViewController {
     }
     
     @IBAction func _calcBtn(_ sender: Any) {
+        print(String(format: "%.2f", FareCalc.calcFare(bal: 0, rides: 4)))
     }
 
 }

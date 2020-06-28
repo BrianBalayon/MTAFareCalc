@@ -10,8 +10,13 @@ import Foundation
 
 class FareCalc {
     
-    static func calcFare(bal: Float, rides: Int, new: Bool) {
-        
+    static func calcFare(bal: Double, rides: Int) -> Double {
+        let ridesCost = Double(rides) * Constants.ONE_FARE
+        var netCost = ridesCost - bal
+        if (netCost > Constants.BONUS_THRESHOLD) {
+            netCost /= 1.05
+        }
+        return netCost
     }
     
 }
