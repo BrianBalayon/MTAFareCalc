@@ -58,14 +58,20 @@
             </objects>
             <point key="canvasLocation" x="132" y="113"/>
         </scene>
-        <!--View Controller-->
+        <!--New Card View Controller-->
         <scene sceneID="bAD-fQ-xCh">
             <objects>
-                <viewController id="vpI-d5-Flq" sceneMemberID="viewController">
+                <viewController id="vpI-d5-Flq" customClass="NewCardViewController" customModule="MTAFareCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VEu-XA-Lxx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy a New MetroCard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhK-ap-fge">
+                                <rect key="frame" x="30" y="124.99999999999999" width="354" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-5Z-poF">
                                 <rect key="frame" x="20" y="350" width="374" height="208"/>
                                 <subviews>
@@ -88,15 +94,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3H-Iq-vXN">
                                         <rect key="frame" x="155" y="60.6666666666667" width="64" height="147.33333333333337"/>
                                         <state key="normal" title="Calculate"/>
+                                        <connections>
+                                            <action selector="_calcBtn:" destination="vpI-d5-Flq" eventType="touchUpInside" id="vAH-Ds-pcM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy a New MetroCard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhK-ap-fge">
-                                <rect key="frame" x="30" y="124.99999999999999" width="354" height="25.333333333333329"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -111,6 +114,10 @@
                         <viewLayoutGuide key="safeArea" id="awm-Zd-3yR"/>
                     </view>
                     <navigationItem key="navigationItem" id="EMb-qB-dj5"/>
+                    <connections>
+                        <outlet property="_ridesField" destination="i5S-5R-SVh" id="n3e-Uc-XJ0"/>
+                        <outlet property="_titleLabel" destination="FhK-ap-fge" id="gax-Ab-FmJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uk-0l-qpq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
