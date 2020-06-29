@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     static var ONE_FARE = 2.75
-    static var BONUS = 0.05
-    static var BONUS_THRESHOLD = 5.50
+    static var BONUS = 0.00
+    static var BONUS_THRESHOLD = 999.00
     static var NEW_CARD_FEE = 1.00
 }
