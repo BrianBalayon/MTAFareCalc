@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="1205.7971014492755" y="-342.1875"/>
         </scene>
-        <!--View Controller-->
+        <!--Refill View Controller-->
         <scene sceneID="1sa-D3-68c">
             <objects>
-                <viewController id="YuF-XJ-IWX" sceneMemberID="viewController">
+                <viewController id="YuF-XJ-IWX" customClass="RefillViewController" customModule="MTAFareCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cin-eK-c0U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,10 +169,13 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONg-8P-LTG">
                                         <rect key="frame" x="155" y="114.66666666666669" width="64" height="93.333333333333314"/>
                                         <state key="normal" title="Calculate"/>
+                                        <connections>
+                                            <action selector="calcFare:" destination="YuF-XJ-IWX" eventType="touchUpInside" id="1Zk-Cn-EdD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refill Your Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reo-cI-5IJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refill Your MetroCard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reo-cI-5IJ">
                                 <rect key="frame" x="30" y="124.99999999999999" width="354" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -192,6 +195,11 @@
                         <viewLayoutGuide key="safeArea" id="7ZK-pv-Uhi"/>
                     </view>
                     <navigationItem key="navigationItem" id="zko-vN-7eJ"/>
+                    <connections>
+                        <outlet property="_balanceField" destination="WZi-08-L7h" id="CeK-1M-86Y"/>
+                        <outlet property="_ridesField" destination="OSh-rT-kQ6" id="Goz-xZ-6fN"/>
+                        <outlet property="_titleLabel" destination="reo-cI-5IJ" id="MLT-rh-MyY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSw-Px-evc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
